@@ -29,7 +29,8 @@ class Game(object):
         self.driver = None
 
     def init(self):
-        self.surface = pygame.display.set_mode(self.size)
+        os.environ['SDL_VIDEO_CENTERED'] = '1'
+        self.surface = pygame.display.set_mode(self.size, 0)
         self.driver = game.driver.Driver(self.surface)
 
     def handleEvent(self, event):
