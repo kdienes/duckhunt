@@ -1,5 +1,6 @@
 ORIG_W, ORIG_H = (800, 500)
-RENDER_W, RENDER_H = ORIG_W, ORIG_H
+
+RENDER_W, RENDER_H = 1728, 1080
 
 def adjwidth (x):
     return (RENDER_W * x) / ORIG_W

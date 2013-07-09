@@ -23,13 +23,16 @@ class Game(object):
         self.surface = None
         self.clock = pygame.time.Clock()
         self.size = SCREEN_WIDTH, SCREEN_HEIGHT
+        self.position = 100, 100
         background = os.path.join('media', 'background.jpg')
         bg = pygame.image.load(background)
         self.background = pygame.transform.smoothscale (bg, self.size)
         self.driver = None
 
     def init(self):
-        os.environ['SDL_VIDEO_CENTERED'] = '1'
+        # os.environ['SDL_VIDEO_CENTERED'] = '1'
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (1990 + 96, 0)
+
         self.surface = pygame.display.set_mode(self.size, 0)
         self.driver = game.driver.Driver(self.surface)
 
